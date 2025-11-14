@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Designs</title>
+    <link rel="icon" href="images/log.png">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+     <!-- Navbar start  -->
+     <div class="nav-bar">
+        <div class="nav">
+            <nav class="bar">
+                <h4 class="heading">Heritage Designs</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="design.html">Designs</a></li>
+                </ul>
+                <button type="button" class="btn">Contact</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Navbar end  -->
+     <!-- section 1  -->
+     <div class="contact_heaading">
+        <h1 class="contact_heading1">LET'S GET STARTED!</h1>
+        <p class="contact_para1">Discover how we can solve your home design challenges and help you fall in love with your space all over again. Give us <br> a call or fill out the form below to schedule an appointment.</p>
+     </div>   
+     <div class="contact_form">
+        <div class="form1">
+            <img src="images/ex-3.jpg" alt="">
+        </div>
+        <div class="form2">
+            <h4>Contact us</h4><br><br>
+            <label for="">First name</label><br><br>
+            <input type="text" placeholder="Enter your name"><br><br>
+            <label for="">Last name</label><br><br>
+            <input type="text" placeholder="Enter your name"><br><br>
+            <label for="">Email</label><br><br>
+            <input type="email" placeholder="Enter your email@"><br><br>
+            <label for="">Phone</label><br><br>
+            <input type="text" id="phone" placeholder="+92-111 222 333"><br><br>
+            <label for="">Message</label><br><br>
+            <span><input type="text" placeholder="Message"><br><br></span>
+            <button style="background-color: #963bcc; color: #fff; border: 2px solid #963bcc; font-weight: bold;text-align: center; cursor: pointer;" class="submit-btn">Submit</button>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+  
+     <div class="footer-section">
+        <div class="footer-top">
+           <div class="container">
+               <div class="row">
+                   <div class="col">
+                       <div class="col-heading" style="color:white; font-weight: bold; margin-left: 40px;">Contact Us</div>
+                       <ul class="col-line">
+                           <li style="color:white;">+111 222 333</li>
+                           <li><a href="#">heritagedesigns@gmail.com</a></li>
+                           <li style="color:white;"> Lahore, Pakistan</li>
+                       </ul>
+                   </div>
+                   <div class="col">
+                       <div class="col-heading" style="color:white; font-weight: bold; margin-left: 35px;">Our Services</div>
+                       <ul class="col-line">
+                           <li><a href="#">Make Infrastructure</a></li>
+                           <li><a href="#">Make Interiors</a></li>
+                           <li><a href="#">Make Exterior</a></li>
+                           <li><a href="#">Make Designs</a></li>
+                       </ul>
+                   </div>
+                   <div class="col">
+                       <div class="col-heading" style="color:white; font-weight: bold;margin-left: 30px;" >Quick Links</div>
+                       <ul class="col-line">
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="about.html">About</a></li>
+                           <li><a href="design.html">Designs</a></li>
+                           <li><a href="form1.html">Form</a></li>
+                           <li><a href="contact.html">Contact</a></li>
+                       </ul>
+                   </div>
+                   <div class="col">
+                       <div class="header-left">
+                           <div class="icon">
+                               <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                               <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                               <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                               <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div class="footer-bottom">
+           <hr>
+           <div class="copyright">
+               <p style="color:white; font-weight: bold;"> 2024 all rights reserved | Thanks for visiting us | </p>
+           </div>
+       </div>
+       <script>
+        // Get the submit button
+        const submitButton = document.querySelector('.submit-btn');
+    
+        // Add a click event listener to the button
+        submitButton.addEventListener('click', function () {
+            // Get all input fields
+            const firstName = document.querySelector('input[placeholder="Enter your name"]');
+            const lastName = document.querySelectorAll('input[placeholder="Enter your name"]')[1];
+            const email = document.querySelector('input[placeholder="Enter your email@"]');
+            const phone = document.querySelector('#phone');
+            const message = document.querySelector('input[placeholder="Message"]');
+    
+            // Validate fields
+            if (
+                firstName.value.trim() === '' ||
+                lastName.value.trim() === '' ||
+                email.value.trim() === '' ||
+                phone.value.trim() === '' ||
+                message.value.trim() === ''
+            ) {
+                alert('Please fill out all fields before submitting.');
+            } else if (!validateEmail(email.value)) {
+                alert('Please enter a valid email address.');
+            } else if (!validatePhone(phone.value)) {
+                alert('Please enter a valid 11-digit phone number.');
+            } else {
+                // Show a pop-up alert
+                alert('Your request has been delivered! We will contact you to schedule a meeting.');
+    
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            }
+        });
+    
+        // Function to validate email
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        // Function to validate phone number
+        function validatePhone(phone) {
+            const phonePattern = /^\d{11}$/;
+            return phonePattern.test(phone);
+        }
+    </script>
+    
+
+</body>
+</html>
